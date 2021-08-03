@@ -1,0 +1,162 @@
+/* CSS HEX */
+
+
+/*============ Navbar and background styling ============= */
+
+.homePageNav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--space-cadet);
+    width: 100%;
+    margin: auto;
+}
+
+.fa-hard-hat {
+    color: var(--magnolia);
+}
+
+#homeTitle {
+    color: var(--magnolia);
+    margin-left: 4rem;
+}
+
+#navList {
+    display: flex;
+    margin-right: 4rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#navList li {
+    padding-left: 2rem;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--magnolia);
+}
+
+a:hover {
+    background-color: var(--peach-crayola);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.pageBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -10;
+    background-color: var(--independence);
+}
+
+:root {
+    --space-cadet: #2d3142ff;
+    --independence: #4f5d75ff;
+    --silver: rgb(120, 122, 122);
+    --white: #ffffffff;
+    --mandarin: #ef8354ff;
+    --granny-smith-apple: #88d18aff;
+    --raisin-black: #28262cff;
+    --blue-bell: #998fc7ff;
+    --lavender-blue: #d4c2fcff;
+    --magnolia: #f9f5ffff;
+    --resolution-blue: #14248aff;
+    --oxford-blue: #001b2eff;
+--charcoal: #294c60ff;
+--cadet-blue-crayola: #adb6c4ff;
+--papaya-whip: #ffefd3ff;
+--peach-crayola: #ffc49bff;
+
+}
+
+/* ============== Modal Styling ================ */
+
+.modalBody {
+    margin: auto;
+    background-color: var(--cadet-blue-crayola);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    display: none;
+}
+
+.modalClose {
+    float: right;
+    margin-top: -20px;
+    margin-right: -20px;
+    border-radius: 10px;
+}
+
+.modalClose:hover {
+    background-color: var(--mandarin);
+}
+
+#signText {
+    position: absolute;
+    bottom: 0;
+    right: 29%;
+}
+
+.modalTitle {
+    position: absolute;
+    right: 45%;
+}
+
+.logInputWrapper {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalInput{
+width: 80%;
+height: 1.75rem;
+padding: 5px;
+border-radius: 10px;
+}
+
+.modalSubmit {
+    width: 50%;
+    height: 1.75rem;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.modalBodysign {
+    margin: auto;
+    background-color: var(--cadet-blue-crayola);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    /* display: none; */
+}
+
+#signSubmit {
+    position: absolute;
+    left: 26%;
+    bottom: 2%;
+}
+
+.signInputWrapper {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#signTitle {
+    right: 43%;
+}
