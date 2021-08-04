@@ -151,25 +151,6 @@ border-radius: 10px;
     right: 43%;
 }
 
-:root {
-    --space-cadet: #2d3142ff;
-    --independence: #4f5d75ff;
-    --silver: rgb(120, 122, 122);
-    --white: #ffffffff;
-    --mandarin: #ef8354ff;
-    --granny-smith-apple: #88d18aff;
-    --raisin-black: #28262cff;
-    --blue-bell: #998fc7ff;
-    --lavender-blue: #d4c2fcff;
-    --magnolia: #f9f5ffff;
-    --resolution-blue: #14248aff;
-    --oxford-blue: #001b2eff;
---charcoal: #294c60ff;
---cadet-blue-crayola: #adb6c4ff;
---papaya-whip: #ffefd3ff;
---peach-crayola: #ffc49bff;
-
-}
 
 /* ======================== employee page styling ======================== */
 
@@ -265,4 +246,99 @@ border-radius: 10px;
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 20px;
+}
+
+:root {
+    --space-cadet: #2d3142ff;
+    --independence: #4f5d75ff;
+    --silver: rgb(120, 122, 122);
+    --white: #ffffffff;
+    --mandarin: #ef8354ff;
+    --granny-smith-apple: #88d18aff;
+    --raisin-black: #28262cff;
+    --blue-bell: #998fc7ff;
+    --lavender-blue: #d4c2fcff;
+    --magnolia: #f9f5ffff;
+    --resolution-blue: #14248aff;
+    --oxford-blue: #001b2eff;
+--charcoal: #294c60ff;
+--cadet-blue-crayola: #adb6c4ff;
+--papaya-whip: #ffefd3ff;
+--peach-crayola: #ffc49bff;
+
+}
+
+/* ===================== roster page ========================= */
+
+.month {
+    height: 30vh;
+    background-color: var(--granny-smith-apple);
+    display: flex;
+    align-items: center;
+}
+
+.titleList {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 50px
+}
+
+.calendarWrapper {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.weekdays{
+    display: flex;
+    font-size: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.weekdays li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    background-color: var(--silver);
+    text-align: center;
+    border: solid 1px black;
+    height: 4rem;
+}
+
+.calendarDate{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.calendarDate li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7 - 2px);
+    background-color: var(--silver);
+    text-align: center;
+    border: solid 1px black;
+    height: 8rem;
+    transition: background-color 0.2s;
+}
+
+.calendarDate li:hover {
+    background-color: var(--mandarin);
+}
+
+.prevDate,
+.nextDate {
+    opacity: 0.5;
+}
+
+li.today {
+    background-color: green;
 }
