@@ -1,6 +1,10 @@
 const date = new Date()
 const month = date.getMonth()
 const calendarDays = document.querySelector('.calendarDate')
+//sets date to first day of the month
+date.setDate(1)
+//get day will get the day on the first of the month(after date is set on line 5)
+console.log(date.getDay())
 
 const lastDay = new Date(date.getFullYear(), date.getMonth(),0, 1)
 console.log(lastDay)
