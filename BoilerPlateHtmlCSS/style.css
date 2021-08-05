@@ -293,7 +293,6 @@ border-radius: 10px;
 .weekdays{
     display: flex;
     font-size: 35px;
-    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -313,12 +312,11 @@ border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     font-size: 35px;
-    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.calendarDate li {
+.calendarDate div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,7 +328,7 @@ border-radius: 10px;
     transition: background-color 0.2s;
 }
 
-.calendarDate li:hover {
+.calendarDate div:hover {
     background-color: var(--mandarin);
 }
 
@@ -339,6 +337,6 @@ border-radius: 10px;
     opacity: 0.5;
 }
 
-li.today {
+div.today {
     background-color: green;
 }
