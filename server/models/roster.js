@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const Employee = require('./employee');
+const Site = require('./sites');
 
 const rosterSchema = new Schema({
   dayDate: {
@@ -7,9 +8,10 @@ const rosterSchema = new Schema({
    min: '01-01-1990',
    max: '01-01-2050'
   },
-  site: {
+  siteName: {
     type: Schema.Types.ObjectId,
-    ref: Site
+    ref:Site,
+    trim: true,
   },
   employees: [{
     type: Schema.Types.ObjectId,

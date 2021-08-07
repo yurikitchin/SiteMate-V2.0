@@ -13,16 +13,21 @@ const siteSchema = new Schema({
     unique: true,
     trim: true,
   },
+  company: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   siteContact: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     trim: true,
   },
   sitePhone:{
     type: Number,
     required: true,
-    unique: true,
+    // unique: true,
     trim: true,
   },
 });

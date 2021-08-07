@@ -2,13 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const employeeSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
-  lastName: {
+  empName: {
     type: String,
     required: true,
     unique: true,
@@ -28,7 +22,7 @@ const employeeSchema = new Schema({
   phone:{
     type: Number,
     required: true,
-    unique: true,
+    // unique: true,
     trim: true,
   },
   isManager: [

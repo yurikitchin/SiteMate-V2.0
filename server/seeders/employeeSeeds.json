@@ -1,0 +1,37 @@
+[
+    {
+        "empName": "Tyler Durden",
+        "email": "tyler@durden.com",
+        "password": "123asd",
+        "phone": "0404040401",
+        "isManager": "true"
+    },
+    {
+        "empName": "Marla Singer",
+        "email": "marla@durden.com",
+        "password": "123asd",
+        "phone": "0404040402",
+        "isManager": "false"
+    },
+    {
+        "empName": "Angel Face",
+        "email": "angel@durden.com",
+        "password": "123asd",
+        "phone": "0404040403",
+        "isManager": "false"
+    },
+    {
+        "empName": "Robert Paulson",
+        "email": "bob@durden.com",
+        "password": "123asd",
+        "phone": "0404040404",
+        "isManager": "false"
+    },
+    {
+        "empName": "RaymondK Hessel",
+        "email": "wish@durden.com",
+        "password": "123asd",
+        "phone": "0404040405",
+        "isManager": "false"
+    }
+]

@@ -7,7 +7,7 @@ type Employee {
     lastName: String
     email: String
     password: String
-    phone: Number
+    phone: String
     isManager: Boolean
 }
 
@@ -15,13 +15,14 @@ type Site {
     _id: ID
     siteName: String
     siteLocation: String
+    company: String
     siteContact: String
-    sitePhone: Number
+    sitePhone: String
 }
 
 type Roster {
     _id: ID
-    dayDate: Date
+    dayDate: String
     site: [Site]!
     employees: [Employee]!
     comments: String
@@ -29,13 +30,15 @@ type Roster {
 
 type Auth {
     token: ID!
-    user: User
+    user: Employee
 }
 
 type Query {
    employees: [Employee]
    sites: [Site]
-   roster: [Roster]
+   rosters: [Roster]
 }
 
 `
+
+module.exports = typeDefs;

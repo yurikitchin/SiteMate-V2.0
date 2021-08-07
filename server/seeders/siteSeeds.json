@@ -1,0 +1,30 @@
+[
+    {
+        "siteName": "Rockingham Hospoital",
+        "siteLocation": "123 rockingham st",
+        "company": "Kilmore",
+        "siteContact": "Craig",
+        "sitePhone": "0414040404"
+    },
+    {
+        "siteName": "Airport Station",
+        "siteLocation": "123 Airport st",
+        "company": "CPD",
+        "siteContact": "Jono",
+        "sitePhone": "0424040404"
+    },
+    {
+        "siteName": "Forrestfeild",
+        "siteLocation": "123 forrestfiels st",
+        "company": "CPD",
+        "siteContact": "Jono",
+        "sitePhone": "0434040404"
+    },
+    {
+        "siteName": "Wangara Factory",
+        "siteLocation": "123 Factory st",
+        "company": "Kilmore",
+        "siteContact": "Oran",
+        "sitePhone": "0444040404"
+    }
+]
