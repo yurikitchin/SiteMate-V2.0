@@ -5,15 +5,15 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         employees: async () => {
-            return Employee.find()
+            return await Employee.find()
             //use employee to populate employees page
         },
         sites: async () => {
-            return Site.find()
+            return await Site.find()
             //use site to populate sites page
         },
         rosters: async () => {
-            Roster.find() 
+            return await Roster.find().populate('siteName').populate('employees')
             //user roster to populate rosters           
         } 
     }
