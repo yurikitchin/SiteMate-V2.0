@@ -13,13 +13,16 @@ const rosterSchema = new Schema({
     ref:Site,
     trim: true,
   },
-  employees: [{
+  employees: [
+    {
     type: Schema.Types.ObjectId,
     ref:Employee,
-  }],
+    unique: false,
+  }
+],
   comments:{
     type: String,
-    unique: true,
+    unique: false,
     trim: true,
   },
 });

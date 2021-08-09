@@ -2,31 +2,7 @@
     {
         "dayDate":"02-08-2021",
         "siteName": "Forrestfeild",
-        "employees": ["Marla Singer", "Angel Face", "Raymond K Hessel"],
-        "comments": "Apartment 1, entry south side of building"
-    },
-    {
-        "dayDate":"03-08-2021",
-        "siteName": "Airport Station",
-        "employees": ["Robert Paulson", "Angel Face", "Raymond K Hessel"],
-        "comments": "Apartment 1, entry south side of building"
-    },
-    {
-        "dayDate":"04-08-2021",
-        "siteName": "Forrestfeild",
-        "employees": ["Marla Singer", "Angel Face", "Raymond K Hessel"],
-        "comments": "Apartment 1, entry south side of building"
-    },
-    {
-        "dayDate":"05-08-2021",
-        "siteName": "Rockingham Hospoital",
-        "employees": ["Tyler Durden", "Marla Singer", "Angel Face", "Raymond K Hessel"],
-        "comments": "Apartment 1, entry south side of building"
-    },
-    {
-        "dayDate":"06-08-2021",
-        "siteName": "Wangara Factory",
-        "employees": ["Tyler", "Marla Singer", "Robert", "Angel Face", "Raymond K Hessel"],
-        "comments": "Apartment 1, entry south side of building"
+        "employees": ["Marla Singer", "Angel Face", "RaymondK Hessel"],
+        "comments": "Forrestfield 02/08 entry south side of building"
     }
 ]
