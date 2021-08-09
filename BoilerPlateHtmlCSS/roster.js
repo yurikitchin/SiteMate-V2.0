@@ -4,7 +4,7 @@ const renderCalendar = () => {
     const calendarDays = document.querySelector(".calendarDate");
     //sets date to first day of the month
   
-    // date.setDate(1);
+    date.setDate(1);
     //get day will get the day on the first of the month(after date is set on divne 5)
     
     const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
