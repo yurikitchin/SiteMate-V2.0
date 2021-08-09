@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
+
+
+
+
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/sitemate-v2',
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
