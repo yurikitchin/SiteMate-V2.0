@@ -23,38 +23,21 @@ db.once("open", async () => {
           employees: [],
           comments: rosterData.comments,
         };
-        console.log("roster Data = ", roster);
-
         try {
             const foundSite = await Site.findOne({ siteName: rosterData.siteName }).exec();
-            roster.siteName = foundSite.siteName;
-            console.log("this is roster after rotsterSite added", roster)
+            roster.siteName = foundSite._id;
         
         } catch(err) {
             console.log("Error finding Site", err.message)
         }
-
-          console.log("this is roster after rotsterSite added", roster)
           
         rosterData.employees.forEach((employeeName) => {
             
             employee.forEach((emp) => {
-                // console.log("This is employee Name", employeeName); 
-                console.log("this is emp name",emp)
                 if (emp.empName === employeeName) {
                     roster.employees.push(emp._id)
                 }
             })  
-        //   try {
-        //     const tempArray = []
-        //     const foundEmployee = await Employee.findOne({ empName: employeeName }).exec();
-        //     tempArray.push(foundEmployee.empName);
-        //     //   console.log("roster post push =", foundEmployee.empName);
-        //     // console.log("roster array =", roster);
-
-        //   } catch(err) {
-        //       console.log("Employee not found", err.message)
-        //   }
             
         });
         console.log("this is the final roster", roster);
@@ -69,14 +52,3 @@ db.once("open", async () => {
       }
 });
 
-
-
-//       }
-//     } catch (err) {
-//       console.error(err);
-//       process.exit(1);
-//     }
-
-//     console.log('all done!');
-//     process.exit(0);
-//   });
