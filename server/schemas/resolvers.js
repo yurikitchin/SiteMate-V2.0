@@ -45,6 +45,33 @@ const resolvers = {
 
             const token = signToken(employee);
             return { token, employee};
+        },
+
+        newEmployee: async (parent, { empName, email, phone, password, isManager }, context) => {
+            
+            console.log("this is context",context.employee)
+
+            const employee = await Employee.create({ empName, email, phone, password, isManager});
+            const dbManager = await Employee.findById(context.employee._id);
+            console.log("from db, db manager", dbManager);
+            dbManager.managedEmployees.push(employee._id);
+            await dbManager.save();
+            const token = signToken(dbManager);
+            return  { token, employee } 
+        },
+
+        // newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: Number!) Auth
+        newSite: async (parent, { siteName, siteLocation, company, siteContact, sitePhone }, context) => {
+            console.log("this is context",context.employee)
+            const addSite = await Site.create({ siteName, siteLocation, company, siteContact, sitePhone });
+            const dbManager = await Employee.findById(context.employee._id);
+            console.log("this is add site", addSite)
+            console.log("from db, db manager", dbManager);
+            dbManager.managedSites.push(addSite._id)
+            console.log("db manager after add Site", dbManager);
+            await dbManager.save();
+            const token = signToken(dbManager);
+            return  { token, addSite } 
         }
     },
 

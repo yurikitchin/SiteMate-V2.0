@@ -31,6 +31,7 @@ type Roster {
 type Auth {
     token: ID!
     employee: Employee
+    site: Site
 }
 
 type Query {
@@ -42,6 +43,8 @@ type Query {
 type Mutation {
     signUp(empName: String!, email: String!, phone: String!, password: String!, isManager: Boolean!): Auth
     login(email: String!, password: String!): Auth
+    newEmployee(empName: String!, email: String!, phone: String!, password: String = "1Deafault!", isManager: Boolean = false): Auth
+    newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: String!): Auth
 }
 
 `
