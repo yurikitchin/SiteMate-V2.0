@@ -19,6 +19,7 @@ const renderCalendar = () => {
     const ldIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
   
     let nextMonthDays = 7
+    
     const NMD = () => {
     if (ldIndex !== 6) {
         7 - (ldIndex + 1);

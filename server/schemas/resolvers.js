@@ -23,6 +23,28 @@ const resolvers = {
             const employee = await Employee.create({ empName, email, phone, password, isManager})
             const token = signToken(employee)
             return { employee, token }
+        },
+        login:async (parent, { email, password}) => {
+            const employee = await Employee.findOne({ email })
+
+            if (!employee) {
+                throw new AuthenticationError('No profile with this email found!');
+              }
+            
+            const correctPW = await employee.isCorrectPassword(password)
+
+            if (!correctPW) {
+                throw new AuthenticationError('Incorrect password!');
+            }
+
+            if(employee.isManager === true ) {
+                console.log("User is manager redirect to manager homepage")
+            } else {
+                console.log("User is employee redirect to employee homepage")
+            }
+
+            const token = signToken(employee);
+            return { token, employee};
         }
     },
 

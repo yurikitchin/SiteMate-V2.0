@@ -41,6 +41,7 @@ type Query {
 
 type Mutation {
     signUp(empName: String!, email: String!, phone: String!, password: String!, isManager: Boolean!): Auth
+    login(email: String!, password: String!): Auth
 }
 
 `
