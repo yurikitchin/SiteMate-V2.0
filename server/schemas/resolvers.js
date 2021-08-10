@@ -15,8 +15,18 @@ const resolvers = {
         rosters: async () => {
             return await Roster.find().populate('siteName').populate('employees')
             //user roster to populate rosters           
-        } 
-    }
+        },
+    },
+//     signUp(empName: String!, email: phone: String!, password: String!, isManger: Boolean!): Auth
+    Mutation: {
+        signUp: async (parent, { empName, email, phone, password, isManager }) => {
+            const employee = await Employee.create({ empName, email, phone, password, isManager})
+            const token = signToken(employee)
+            return { employee, token }
+        }
+    },
+
+
 }
 
 module.exports = resolvers

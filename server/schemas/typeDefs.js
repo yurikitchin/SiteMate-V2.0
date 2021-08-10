@@ -27,15 +27,20 @@ type Roster {
     comments: String
 }
 
+
 type Auth {
     token: ID!
-    user: Employee
+    employee: Employee
 }
 
 type Query {
    employees: [Employee]
    sites: [Site]
    rosters: [Roster]
+}
+
+type Mutation {
+    signUp(empName: String!, email: String!, phone: String!, password: String!, isManager: Boolean!): Auth
 }
 
 `

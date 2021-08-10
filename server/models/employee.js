@@ -20,16 +20,12 @@ const employeeSchema = new Schema({
     minlength: 5,
   },
   phone:{
-    type: Number,
+    type: String,
     required: true,
     // unique: true,
     trim: true,
   },
-  isManager: [
-    {
-      type: Boolean,
-    },
-  ],
+  isManager: Boolean
 });
 
 // set up pre-save middleware to create password
