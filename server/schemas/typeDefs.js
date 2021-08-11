@@ -25,6 +25,7 @@ type Roster {
     siteName: Site!
     employees: [Employee]!
     comments: String
+    managerID: Employee!
 }
 
 
@@ -32,6 +33,15 @@ type Auth {
     token: ID!
     employee: Employee
     site: Site
+    roster: Roster
+}
+
+input EmployeeInput {
+    empName: String
+    email: String
+    password: String
+    phone: String
+    isManager: Boolean
 }
 
 type Query {
@@ -45,6 +55,9 @@ type Mutation {
     login(email: String!, password: String!): Auth
     newEmployee(empName: String!, email: String!, phone: String!, password: String = "1Deafault!", isManager: Boolean = false): Auth
     newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: String!): Auth
+    addRoster(dayDate: String!, siteName: String!, employees: [String!], comments: String): Auth
+    # deleteEmployee(employeeID: ID!): Employee
+    # deleteSite(siteID: ID!): Site
 }
 
 `

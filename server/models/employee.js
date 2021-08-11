@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const Site = require('./sites');
+const Roster = require('./roster');
 
 const employeeSchema = new Schema({
   empName: {
@@ -43,7 +44,7 @@ const employeeSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Employee',
     unique: false,
-  }]
+  }],
 
 });
 

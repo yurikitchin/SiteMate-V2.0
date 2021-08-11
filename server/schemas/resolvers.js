@@ -62,17 +62,66 @@ const resolvers = {
 
         // newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: Number!) Auth
         newSite: async (parent, { siteName, siteLocation, company, siteContact, sitePhone }, context) => {
-            console.log("this is context",context.employee)
+
             const addSite = await Site.create({ siteName, siteLocation, company, siteContact, sitePhone });
             const dbManager = await Employee.findById(context.employee._id);
-            console.log("this is add site", addSite)
-            console.log("from db, db manager", dbManager);
+    
             dbManager.managedSites.push(addSite._id)
-            console.log("db manager after add Site", dbManager);
+          
             await dbManager.save();
             const token = signToken(dbManager);
             return  { token, addSite } 
-        }
+        },
+
+        // addRoster: (dayDate: Date!, siteName: String!, employees: [{Employee}], comments: String): Auth
+        addRoster: async (parent, { dayDate, siteName, employees, comments}, context) => {
+            console.log("this is context",context.employee)
+            const dbManager = await Employee.findById(context.employee._id);
+            // add dbmanager to managerID pass to roster.create
+            let newRoster = {
+                dayDate: dayDate,
+                siteName: "",
+                employees: [],
+                comments: comments,
+                managerID: dbManager._id
+            }
+            //find site name, update variable pass to roster.create
+           
+            const rosterSite = await Site.findOne({siteName: siteName});
+            console.log("this is the found rosterSite", rosterSite)
+            newRoster.siteName = rosterSite._id
+             //loop through employee array, find employees, pass array of id's to roster.create
+            const employeeDB = await Employee.find({})
+            employees.forEach((employeeName) => {
+                employeeDB.forEach((emp) => {
+                    if (emp.empName === employeeName) {
+                        newRoster.employees.push(emp._id)
+                    }
+                })
+            })
+            console.log("this is the final roster", newRoster);
+            let roster = await Roster.create(newRoster);
+            let newroster = await Roster.find({_id: roster._id}).populate('siteName').populate('employees').exec()
+            roster = newroster[0]
+            const token = signToken(dbManager);
+            return  { token, roster } 
+        },
+
+        // deleteEmployee: async (parent, { employeeID }, context) => {
+        //     const manager = context.employee
+        //     const managedEmployees = context.employee.managedEmployees
+        //     const employeeToDelete = ""
+        //     managedEmployees.forEach((employee) => {
+        //         if (employee._id === employeeID) {
+                    
+        //         }
+        //     })
+            
+
+
+                // const employee = await Employee.findByIdAndDelete(employeeID)
+                // return employee
+        // }
     },
 
 

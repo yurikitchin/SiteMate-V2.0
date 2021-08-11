@@ -22,6 +22,7 @@ db.once("open", async () => {
           siteName: "",
           employees: [],
           comments: rosterData.comments,
+          managerID: ""
         };
         try {
             const foundSite = await Site.findOne({ siteName: rosterData.siteName }).exec();
@@ -40,6 +41,13 @@ db.once("open", async () => {
             })  
             
         });
+        try {
+          const manager = await Employee.findOne({empName: rosterData.managerID}).exec();
+          console.log("this is manager ",manager)
+          roster.managerID = manager._id
+        } catch(err) {
+          console.log("Error finding manager", err.message)
+      }
         console.log("this is the final roster", roster);
         await Roster.create(roster);
         console.log('all done!');

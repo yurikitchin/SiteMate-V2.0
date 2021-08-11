@@ -16,7 +16,7 @@ const rosterSchema = new Schema({
   employees: [
     {
     type: Schema.Types.ObjectId,
-    ref:Employee,
+    ref:"Employee",
     unique: false,
   }
 ],
@@ -25,6 +25,12 @@ const rosterSchema = new Schema({
     unique: false,
     trim: true,
   },
+
+  managerID: {
+    type: Schema.Types.ObjectId,
+    ref:"Employee",
+    unique: false,
+  }
 });
 
 const Roster = model('roster', rosterSchema);

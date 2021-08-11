@@ -3,30 +3,35 @@
         "dayDate":"02-08-2021",
         "siteName": "Forrestfeild",
         "employees": ["Marla Singer", "Angel Face", "RaymondK Hessel"],
-        "comments": "Forrestfield 02/08 entry south side of building"
+        "comments": "Forrestfield 02/08 entry south side of building",
+        "managerID": "Tyler Durden"
     },
     {
         "dayDate":"03-08-2021",
         "siteName": "Airport Station",
         "employees": ["Robert Paulson", "Angel Face", "RaymondK Hessel"],
-        "comments": "Airport Station 03/08, entry south side of building"
+        "comments": "Airport Station 03/08, entry south side of building",
+        "managerID": "Tyler Durden"
     },
     {
         "dayDate":"04-08-2021",
         "siteName": "Forrestfeild",
         "employees": ["Marla Singer", "Angel Face", "RaymondK Hessel"],
-        "comments": "Forrestfeild 04/08, entry south side of building"
+        "comments": "Forrestfeild 04/08, entry south side of building",
+        "managerID": "Tyler Durden"
     },
     {
         "dayDate":"05-08-2021",
         "siteName": "Rockingham Hospoital",
         "employees": ["Tyler Durden", "Marla Singer", "Angel Face", "RaymondK Hessel"],
-        "comments": "Rockingham Hospoital 05/08, entry south side of building"
+        "comments": "Rockingham Hospoital 05/08, entry south side of building",
+        "managerID": "Tyler Durden"
     },
     {
         "dayDate":"06-08-2021",
         "siteName": "Wangara Factory",
         "employees": ["Tyler Durden", "Marla Singer", "Robert Paulson", "Angel Face", "RaymondK Hessel"],
-        "comments": "Wangara Factory 06/08, entry south side of building"
+        "comments": "Wangara Factory 06/08, entry south side of building",
+        "managerID": "Tyler Durden"
     }
 ]
