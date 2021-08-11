@@ -48,13 +48,11 @@ const resolvers = {
         },
 
         newEmployee: async (parent, { empName, email, phone, password, isManager }, context) => {
-            
-            console.log("this is context",context.employee)
 
             const employee = await Employee.create({ empName, email, phone, password, isManager});
             const dbManager = await Employee.findById(context.employee._id);
-            console.log("from db, db manager", dbManager);
             dbManager.managedEmployees.push(employee._id);
+            console.log("this is employee", employee )
             await dbManager.save();
             const token = signToken(dbManager);
             return  { token, employee } 
@@ -63,14 +61,13 @@ const resolvers = {
         // newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: Number!) Auth
         newSite: async (parent, { siteName, siteLocation, company, siteContact, sitePhone }, context) => {
 
-            const addSite = await Site.create({ siteName, siteLocation, company, siteContact, sitePhone });
+            let addSite = await Site.create({ siteName, siteLocation, company, siteContact, sitePhone });
             const dbManager = await Employee.findById(context.employee._id);
-    
             dbManager.managedSites.push(addSite._id)
-          
+            console.log("this is addSite ......", addSite)
             await dbManager.save();
             const token = signToken(dbManager);
-            return  { token, addSite } 
+            return  { token, site:addSite } 
         },
 
         // addRoster: (dayDate: Date!, siteName: String!, employees: [{Employee}], comments: String): Auth
