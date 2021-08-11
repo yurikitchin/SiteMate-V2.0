@@ -56,7 +56,7 @@ db.once("open", async () => {
       
     });
   } catch (err) {
-    console.log("Error adding Roser", err);
+    console.log("Error Seeding Message", err.message);
       }
 });
 
