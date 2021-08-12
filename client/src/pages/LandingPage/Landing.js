@@ -1,40 +1,48 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { LOGIN_EMPLOYEE } from "../../utils/mutations";
+import { LOGIN } from "../../utils/mutations";
 import "./styles.css";
 
 import Auth from "../../utils/auth";
 
 const Login = (props) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+
+  const [loginFormdata, setLoginFormData] = useState({
+    email: "",
+    password: "",
+  })
   
-  const [login, { error, data }] = useMutation(LOGIN_EMPLOYEE);
+  const [login, { error, data }] = useMutation(LOGIN);
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
-    return name === 'email' ? setEmail(value) : setPassword(value);
+    setLoginFormData({ ...loginFormdata, [name]: value})
   };
 
   // submit form
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const { data } = await login({
-        variables: { email, password },
-      });
 
-      Auth.login(data.login.token);
+    try {
+
+      const { data: { login: {token}} } = await login({
+        variables: { ...loginFormdata },
+      });
+      console.log("this is data", data)
+
+      Auth.login(token);
     } catch (e) {
       console.error(e);
     }
 
     // clear form values
-       setEmail('')
-      setPassword('')
+ setLoginFormData({
+  email: "",
+  password: "",
+ })
 
   };
 
@@ -60,7 +68,7 @@ const Login = (props) => {
                   className="logInput"
                   id="logEmail"
                   placeholder="Email"
-                  value={email}
+                  value={loginFormdata.email}
                   onChange={handleChange}
                 />
                 <input
@@ -69,7 +77,7 @@ const Login = (props) => {
                   className="logInput"
                   id="logPassword"
                   placeholder="Password"
-                  value={password}
+                  value={loginFormdata.password}
                   onChange={handleChange}
                 />
                 <button
@@ -81,16 +89,15 @@ const Login = (props) => {
                   Login
                 </button>
               </form>
-              {/* <div id="signUp">
+              <div id="signUp">
                 <h3 id="signText">not a member?</h3>
                 <input
-                  // className="loginBtn"
+                  className="loginBtn"
                   id="signUpSubmit"
                   type="button"
-                  id="signUpBtn"
                   value="Sign Up"
                 />
-              </div> */}
+              </div>
             </div>
           )}
           {/* {error && (
