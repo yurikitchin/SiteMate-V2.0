@@ -13,14 +13,12 @@ export const LOGIN = gql`
 `;
 
 export const SIGNUP = gql`
-  mutation signUp($EmpName: String!, $Email: String!, $Phone: String!, $Password: String!, $IsManager: Boolean!) {
-  signUp(empName: $EmpName, email: $Email, phone: $Phone, password: $Password, isManager: $IsManager) {
-    # token
+  mutation signUp($empName: String!, $email: String!, $phone: String!, $password: String!, $isManager: Boolean!) {
+  signUp(empName: $empName, email: $email, phone: $phone, password: $password, isManager: $isManager) {
+    token
     employee {
-      _id
       empName
       email
-      password
       phone
       isManager
     }

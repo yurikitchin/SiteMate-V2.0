@@ -45,12 +45,14 @@ const SignUp = (props) => {
     console.log("start of handleformsubmit", signUpFormdata)
     event.preventDefault();
     try {
-      const { data } = await signUp({
+      const {  data: {
+        signUp: { token },
+      },} = await signUp({
         variables: { ...signUpFormdata },
       });
       console.log("this is data", data);
 
-      Auth.getProfile(data.signUp.token);
+      Auth.login(token);
     } catch (e) {
       console.log("there is an error with handleformsubmit", e.message)
       console.error(e);
@@ -125,7 +127,7 @@ const SignUp = (props) => {
               onClick={confirmPassword} */}
             {/* /> */}
           </div>
-          <button type="submit" className="modalSubmit" id="signSubmit" onClick={handleSignChange}>
+          <button type="submit" className="modalSubmit" id="signSubmit">
           Join SiteMate
         </button>
         </form>

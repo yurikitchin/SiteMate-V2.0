@@ -58,7 +58,7 @@ const resolvers = {
         isManager,
       });
       const token = signToken(employee);
-      return { employee };
+      return { token, employee };
     },
     login: async (parent, { email, password }) => {
       const employee = await Employee.findOne({ email });

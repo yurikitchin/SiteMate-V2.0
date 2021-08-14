@@ -29,6 +29,7 @@ const Landing = (props) => {
     console.log("this is data", data);
     console.log("this is form data", loginFormdata)
     try {
+      console.log("shoot me in the face")
       const {
         data: {
           login: { token },
