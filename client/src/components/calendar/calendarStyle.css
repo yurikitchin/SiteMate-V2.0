@@ -1,0 +1,72 @@
+
+/* ============================= calendar ========================= */
+.month {
+    height: 30vh;
+    background-color: var(--granny-smith-apple);
+    display: flex;
+    align-items: center;
+}
+
+.titleList {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 50px
+}
+
+.calendarWrapper {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.weekdays{
+    display: flex;
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.weekdays li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    background-color: var(--silver);
+    text-align: center;
+    border: solid 1px black;
+    height: 4rem;
+}
+
+.calendarDate{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.calendarDate div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7 - 2px);
+    background-color: var(--silver);
+    text-align: center;
+    border: solid 1px black;
+    height: 8rem;
+    transition: background-color 0.2s;
+}
+
+.calendarDate div:hover {
+    background-color: var(--mandarin);
+}
+
+.prevDate,
+.nextDate {
+    opacity: 0.5;
+}
+
+div.today {
+    background-color: green;
+}

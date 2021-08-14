@@ -12,17 +12,21 @@ export const LOGIN = gql`
   }
 `;
 
-// export const ADD_USER = gql`
-//   mutation addUser($username: String!, $email: String!, $password: String!) {
-//     addUser(username: $username, email: $email, password: $password) {
-//       token
-//       user {
-//         _id
-//         username
-//       }
-//     }
-//   }
-// `;
+export const SIGNUP = gql`
+  mutation signUp($EmpName: String!, $Email: String!, $Phone: String!, $Password: String!, $IsManager: Boolean!) {
+  signUp(empName: $EmpName, email: $Email, phone: $Phone, password: $Password, isManager: $IsManager) {
+    # token
+    employee {
+      _id
+      empName
+      email
+      password
+      phone
+      isManager
+    }
+  }
+}
+`;
 
 // export const ADD_THOUGHT = gql`
 //   mutation addThought($thoughtText: String!) {

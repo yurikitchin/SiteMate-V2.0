@@ -1,0 +1,12 @@
+.employeeCard {
+    background-color: var(--cadet-blue-crayola);
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.employeeCard h1 {
+    background-color: var(--charcoal);
+    text-align: center;
+    border-radius: 5px;
+    color: var(--magnolia);
+}

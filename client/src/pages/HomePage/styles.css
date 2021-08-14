@@ -1,0 +1,70 @@
+:root {
+    --space-cadet: #2d3142ff;
+    --independence: #4f5d75ff;
+    --silver: rgb(120, 122, 122);
+    --white: #ffffffff;
+    --mandarin: #ef8354ff;
+    --granny-smith-apple: #88d18aff;
+    --raisin-black: #28262cff;
+    --blue-bell: #998fc7ff;
+    --lavender-blue: #d4c2fcff;
+    --magnolia: #f9f5ffff;
+    --resolution-blue: #14248aff;
+    --oxford-blue: #001b2eff;
+--charcoal: #294c60ff;
+--cadet-blue-crayola: #adb6c4ff;
+--papaya-whip: #ffefd3ff;
+--peach-crayola: #ffc49bff;
+
+}
+
+/* ======================== nav bar ======================= */
+.homePageNav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--space-cadet);
+    width: 100%;
+    margin: auto;
+}
+
+.fa-hard-hat {
+    color: var(--magnolia);
+}
+
+#homeTitle {
+    color: var(--magnolia);
+    margin-left: 4rem;
+}
+
+#navList {
+    display: flex;
+    margin-right: 4rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#navList li {
+    padding-left: 2rem;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--magnolia);
+}
+
+a:hover {
+    background-color: var(--peach-crayola);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.pageBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -10;
+    background-color: var(--independence);
+}

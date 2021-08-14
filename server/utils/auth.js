@@ -14,7 +14,7 @@ module.exports = {
     if (!token) {
       return req;
     }
-    console.log("this is token react Auth...............",token)
+    // console.log("this is token react Auth...............",token)
 
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });

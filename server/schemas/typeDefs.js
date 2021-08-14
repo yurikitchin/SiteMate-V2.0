@@ -8,6 +8,8 @@ type Employee {
     password: String
     phone: String
     isManager: Boolean
+    managedSites:[Site]!
+    managedEmployees:[Employee]!
 }
 
 type Site {
@@ -45,13 +47,15 @@ input EmployeeInput {
 }
 
 type Query {
-   employees: [Employee]
-   sites: [Site]
-   rosters: [Roster]
+   employees: [Employee]!
+   sites: [Site]!
+   rosters: [Roster]!
+   employee(employeeId: ID!): Employee
+   user: Employee
 }
 
 type Mutation {
-    signUp(empName: String!, email: String!, phone: String!, password: String!, isManager: Boolean!): Auth
+    signUp(empName: String!, email: String!, phone: String!, password: String!, isManager: Boolean!): Employee
     login(email: String!, password: String!): Auth
     newEmployee(empName: String!, email: String!, phone: String!, password: String = "1Deafault!", isManager: Boolean = false): Auth
     newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: String!): Auth
