@@ -26,6 +26,7 @@ const Landing = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault()
+    console.log("this is data", data);
     console.log("this is form data", loginFormdata)
     try {
       const {
@@ -103,7 +104,7 @@ const Landing = (props) => {
           onClick={() => setShow(true)}
                           />
       </div>
-      {/* <SignUp onClose={() => setShow(false)} show={show}/> */}
+      <SignUp onClose={() => setShow(false)} show={show}/>
     </div>
   )}
   {error && (

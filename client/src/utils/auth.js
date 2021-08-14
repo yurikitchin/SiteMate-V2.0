@@ -26,15 +26,18 @@ class AuthService {
   getToken() {
     return localStorage.getItem('id_token');
   }
+  
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
+    //decode token
+    //if decodedtoke.data.ismanager === trie window location /home else window local /employee
     window.location.assign('/home');
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload();
+    window.location.assign('/')
   }
 }
 

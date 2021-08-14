@@ -37,3 +37,19 @@ query User {
   }
 }
 `;
+
+export const QUERY_ROSTER = gql`
+query rosters($rostersManager: String!){
+  rosters(manager: $rostersManager) {
+    _id
+    dayDate
+    siteName {
+      siteName
+    }
+    employees {
+      empName
+    }
+    comments
+  }
+}
+`;

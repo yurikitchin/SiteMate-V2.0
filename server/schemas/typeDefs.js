@@ -49,7 +49,7 @@ input EmployeeInput {
 type Query {
    employees: [Employee]!
    sites: [Site]!
-   rosters: [Roster]!
+   rosters(manager: String!): [Roster]!
    employee(employeeId: ID!): Employee
    user: Employee
 }

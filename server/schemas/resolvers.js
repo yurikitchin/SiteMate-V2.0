@@ -5,25 +5,44 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     employees: async () => {
-      console.log("this is employee query")
-      return Employee.find().populate("managedSites").populate("managedEmployees");
+      console.log("this is employee query");
+      return Employee.find()
+        .populate("managedSites")
+        .populate("managedEmployees");
       //use employee to populate employees page
     },
     sites: async () => {
       return Site.find();
       //use site to populate sites page
     },
-    rosters: async () => {
-      return Roster.find().populate("siteName").populate("employees");
+    rosters: async (parent, { manager }) => {
+      // console.log("this is manager arg, typeof", manager)
+      let Rosters = await Roster.find()
+        .populate("siteName")
+        .populate("employees");
+      let managedRosters = [];
+      for (let x in Rosters) {
+        if (manager === Rosters[x].managerID.toString()) {
+          managedRosters.push(Rosters[x]);
+        }
+      }
+      return managedRosters;
       //user roster to populate rosters
     },
     employee: async (parent, { employeeId }) => {
-      return Profile.findOne({ _id: employeeId });
+      return Employee.findOne({ _id: employeeId })
+        .populate("managedSites")
+        .populate("managedEmployees");
     },
     user: async (parent, args, context) => {
-        console.log("this is context.employee.....................", context.employee)
+      console.log(
+        "this is context.employee.....................",
+        context.employee
+      );
       if (context.employee) {
-        return Employee.findOne({ _id: context.employee._id }).populate("managedSites").populate("managedEmployees");;
+        return Employee.findOne({ _id: context.employee._id })
+          .populate("managedSites")
+          .populate("managedEmployees");
       }
       throw new AuthenticationError("You need to be logged in!");
     },

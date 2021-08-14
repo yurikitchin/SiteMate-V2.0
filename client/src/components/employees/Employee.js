@@ -4,6 +4,7 @@ import { QUERY_USER } from "../../utils/queries";
 import './employeeStyles.css'
 
 export default function Employee() {
+ 
   const { loading, error, data } = useQuery(QUERY_USER);
 
   if (loading) {
@@ -18,15 +19,10 @@ export default function Employee() {
       console.log("please kill me", data.user)
   }
 
-  //   if (Auth.loggedIn() === employeeId) {
-//     return <Redirect to="/home" />;
-//   }
-
   else if (data.user) {
     const user = data.user;
-console.log(data.user.managedEmployees[0])
     return (
-        <div>
+        <div className="employeeWrap">
         {user.managedEmployees.map((emp) => (
           <section className="employeeCard" key={emp._id}>
             <h4>{emp.empName}</h4>
