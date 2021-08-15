@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "SiteMate V2 an interactive rostering and timesheet system",
   "main": "index.js",
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001",
   "engines": {
     "node": "14.16.1"
   },
