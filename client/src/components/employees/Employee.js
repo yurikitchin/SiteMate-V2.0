@@ -31,6 +31,7 @@ export default function Employee() {
               <h4>{emp.empName}</h4>
               <h3> {emp.email} </h3>
               <h4> {emp.phone} </h4>
+              <button type="submit">Delete</button>
             </section>
           ))}
         </div>
