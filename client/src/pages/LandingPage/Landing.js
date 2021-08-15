@@ -30,16 +30,12 @@ const Landing = (props) => {
     console.log("this is form data", loginFormdata)
     try {
       console.log("shoot me in the face")
-      const {
-        data: {
-          login: { token },
-        },
-      } = await login({
+      const { data } = await login({
         variables: { ...loginFormdata },
       });
       console.log("this is data", data);
 
-      Auth.login(token);
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
