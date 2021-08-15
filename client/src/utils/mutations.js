@@ -56,3 +56,21 @@ mutation newSite($siteName: String!, $siteLocation: String!, $company: String!, 
   }
 }
 `;
+
+export const ADD_ROSTER = gql`
+mutation addRoster($dayDate: String!, $siteName: String!, $employees: [String!], $comments: String) {
+  addRoster(dayDate: $dayDate, siteName: $siteName, employees: $employees, comments: $comments) {
+    token
+    roster {
+      dayDate
+      siteName {
+        siteName
+      }
+      employees {
+        empName
+      }
+      comments
+    }
+  }
+}
+`;

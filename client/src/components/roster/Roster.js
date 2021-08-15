@@ -4,8 +4,10 @@ import { QUERY_ROSTER } from "../../utils/queries";
 import "./rosterStyles.css";
 import Auth from "../../utils/auth";
 import "./rosterStyles.css"
+import AddRoster from "../addRosterModal/AddRoster";
 
 export default function Roster() {
+  const [show, setShow] = React.useState(false);
   const userID = Auth.getProfile().data._id;
 
   // console.log("this is manager.......", userID)
@@ -26,14 +28,14 @@ export default function Roster() {
   if (!data.rosters) {
     console.log("please kill me", data.rosters);
   } else if (data.rosters) {
-    
+    console.log(data.rosters)
     return (
       <div>
         <div className="rosterWrap">
           {data.rosters.map((roster) => (
             <section className="rosterCard" key={roster._id}>
               <h1 className="rosterTitle"> Roster for {roster.dayDate} </h1>
-              <div className="rosterInfo">
+              <div className="rosterInfo"  key={roster.comments}>
                 <h4> Site: {roster.siteName.siteName}</h4>
                 <h4> Rostered Staff:</h4>
                 {roster.employees.map((emp) => (
@@ -46,6 +48,12 @@ export default function Roster() {
             </section>
           ))}
         </div>
+
+        <div>
+          <button type="button" onClick={() => setShow(true)}>Add Roster ➕ </button>
+          <AddRoster onClose={() => setShow(false)} show={show} />
+        </div>
+
       </div>
     );
   }
