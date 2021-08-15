@@ -15,7 +15,7 @@ export default function Home() {
   let [employee, setShowE] = useState(false);
   let [roster, setShowR] = useState(true);
   let [site, setShowS] = useState(false);
-
+ 
   function showComponent(compName) {
     console.log(compName);
     switch (compName) {
@@ -77,6 +77,9 @@ export default function Home() {
       {site && <Sites />}
 
       {roster && <Roster />}
+
+     
+
     </div>
   );
 }

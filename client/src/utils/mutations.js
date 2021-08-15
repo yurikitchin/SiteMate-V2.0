@@ -25,34 +25,18 @@ export const SIGNUP = gql`
   }
 }
 `;
+// password: String = "1Deafault!", isManager: Boolean = false
 
-// export const ADD_THOUGHT = gql`
-//   mutation addThought($thoughtText: String!) {
-//     addThought(thoughtText: $thoughtText) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//       }
-//     }
-//   }
-// `;
-
-// export const ADD_COMMENT = gql`
-//   mutation addComment($thoughtId: ID!, $commentText: String!) {
-//     addComment(thoughtId: $thoughtId, commentText: $commentText) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const ADD_EMP= gql`
+  mutation newEmployee($empName: String!, $email: String!, $phone: String!, $password: String!, $isManager: Boolean!) {
+  newEmployee(empName: $empName, email: $email, phone: $phone, password: $password, isManager: $isManager) {
+    token
+    employee {
+      empName
+      email
+      phone
+      isManager
+    }
+  }
+}
+`;
