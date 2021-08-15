@@ -9,6 +9,8 @@ export default function Employee() {
 
   const [show, setShow] = React.useState(false);
 
+  console.log(data)
+
   if (loading) {
     return <div>Loading...</div>;
   }

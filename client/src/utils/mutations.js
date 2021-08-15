@@ -40,3 +40,19 @@ export const ADD_EMP= gql`
   }
 }
 `;
+
+export const ADD_SITE = gql`
+mutation newSite($siteName: String!, $siteLocation: String!, $company: String!, $siteContact: String!, $sitePhone: String!) {
+  newSite(siteName: $siteName, siteLocation: $siteLocation, company: $company, siteContact: $siteContact, sitePhone: $sitePhone) {
+    token
+    site {
+      _id
+      siteName
+      siteLocation
+      company
+      siteContact
+      sitePhone
+    }
+  }
+}
+`;

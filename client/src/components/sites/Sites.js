@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState }  from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../../utils/queries";
 import "./siteStyles.css";
+import AddSite from "../addSiteModal/AddSite"
 
 export default function Sites() {
   const { loading, error, data } = useQuery(QUERY_USER);
+
+  const [show, setShow] = React.useState(false);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -20,6 +23,7 @@ export default function Sites() {
     const user = data.user;
 
     return (
+      <>
       <div className="siteWrap">
         {user.managedSites.map((site) => (
           <section className="siteCard" key={site._id}>
@@ -33,6 +37,13 @@ export default function Sites() {
           </section>
         ))}
       </div>
+
+      <div>
+          <button type="button" onClick={() => setShow(true)}>Add Site ➕ </button>
+          <AddSite onClose={() => setShow(false)} show={show} />
+        </div>
+      
+      </>
     );
   }
 }
