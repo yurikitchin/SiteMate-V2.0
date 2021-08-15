@@ -34,7 +34,7 @@ const Landing = (props) => {
         variables: { ...loginFormdata },
       });
       console.log("this is data", data);
-
+      console.log(data.login.token)
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
