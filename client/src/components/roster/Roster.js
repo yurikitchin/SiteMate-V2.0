@@ -49,7 +49,7 @@ export default function Roster() {
           ))}
         </div>
 
-        <div>
+        <div className="addBtn">
           <button type="button" onClick={() => setShow(true)}>Add Roster ➕ </button>
           <AddRoster onClose={() => setShow(false)} show={show} />
         </div>

@@ -38,7 +38,7 @@ export default function Sites() {
         ))}
       </div>
 
-      <div>
+      <div className="addBtn">
           <button type="button" onClick={() => setShow(true)}>Add Site ➕ </button>
           <AddSite onClose={() => setShow(false)} show={show} />
         </div>

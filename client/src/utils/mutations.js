@@ -74,3 +74,14 @@ mutation addRoster($dayDate: String!, $siteName: String!, $employees: [String!],
   }
 }
 `;
+
+export const DELETE_EMP= gql`
+mutation deleteEmployee($employeeID: String!) {
+  deleteEmployee( employeeID: $employeeID) {
+    token
+    employee {
+      _id
+      }
+  }
+}
+`;

@@ -16,4 +16,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 7rem;
+    position: fixed;
+    top: 0;
+    left: 75px;
+    right: 75px;
+    flex-wrap: wrap;
+}
+
+.addBtn {
+    position: fixed;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.addBtn button {
+margin-left: auto;
+margin-right: auto;
 }

@@ -50,7 +50,7 @@ type Query {
    employees: [Employee]!
    sites: [Site]!
    rosters(manager: String!): [Roster]!
-   employee(employeeId: ID!): Employee
+   employee(employeeId: String!): Employee
    user: Employee
 }
 
@@ -60,7 +60,7 @@ type Mutation {
     newEmployee(empName: String!, email: String!, phone: String!, password: String = "1Deafault!", isManager: Boolean = false): Auth
     newSite(siteName: String!, siteLocation: String!, company: String!, siteContact: String! sitePhone: String!): Auth
     addRoster(dayDate: String!, siteName: String!, employees: [String!], comments: String): Auth
-    deleteEmployee(employeeID: ID!): Auth
+    deleteEmployee(employeeID: String!): Auth
     deleteSite(siteID: ID!): Auth
 }
 

@@ -7,14 +7,28 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { onError } from 'apollo-link-error';
+import { ApolloLink } from 'apollo-link';
 
 import Landing from './pages/LandingPage/Landing';
 import Home from './pages/HomePage/Home';
+
+
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    console.log('graphQLErrors', graphQLErrors);
+  }
+  if (networkError) {
+    console.log('networkError', networkError);
+  }
+});
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
+
+const link = ApolloLink.from([errorLink, httpLink]);
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {

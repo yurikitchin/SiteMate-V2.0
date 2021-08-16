@@ -32,7 +32,7 @@ const AddEmp = (props) => {
       });
       console.log("this is data", data);
       Auth.getToken(data.newEmployee.token)
-      // window.location.assign('/home')
+      window.location.assign('/home')
     } catch (e) {
       console.log("there is an error with handleformsubmit", e.message)
       console.error(e);
