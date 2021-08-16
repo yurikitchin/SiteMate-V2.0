@@ -2,7 +2,6 @@
   "name": "sitemate",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
     "@apollo/client": "^3.4.7",
     "@devexpress/dx-react-core": "^2.7.6",
@@ -46,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
