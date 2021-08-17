@@ -27,5 +27,8 @@
   "homepage": "https://github.com/yurikitchin/SiteMate-V2.0#readme",
   "devDependencies": {
     "concurrently": "^6.2.0"
+  },
+  "dependencies": {
+    "apollo-link-error": "^1.1.13"
   }
 }
